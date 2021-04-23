@@ -30,8 +30,9 @@
             <h2>HÀNG MỚI VỀ</h2>
             <div class="new__container">
                 <div class="new__icon-left new__icon"><i class="fas fa-chevron-circle-left"></i></div>
+                {{#each bestSelling}}
                 <div class="item-new">
-                    <img src="./assets/newItem/APHTK227-2-400x500.jpg" alt="">
+                    <img src={{this.path}} alt="">
                     <div class="item-new__desc">
                         <div class="item-new__des-title">Ao ngan tay</div>
                         <div class="item-new__des-price">500.000</div>
@@ -45,56 +46,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="item-new">
-                    <img src="./assets/newItem/APHTK231-3-400x500.jpg" alt="">
-                    <div class="item-new__desc">
-                        <div class="item-new__des-title">Ao ngan tay</div>
-                        <div class="item-new__des-price">500.000</div>
-                    </div>
-                    <div class="overlay__item-new">
-                        <div>
-                            <i class="fas fa-shopping-cart"></i>
-
-                        </div>
-                        <div>
-                            <i class="fas fa-info-circle"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="item-new">
-                    <img src="./assets/newItem/SHNTK218-12-1-400x500.jpg" alt="">
-                    <div class="item-new__desc">
-                        <div class="item-new__des-title">Ao ngan tay</div>
-                        <div class="item-new__des-price">500.000</div>
-                    </div>
-                    <div class="overlay__item-new">
-                        <div>
-                            <i class="fas fa-shopping-cart"></i>
-
-                        </div>
-                        <div>
-                            <i class="fas fa-info-circle"></i>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="item-new">
-                    <img src="./assets/newItem/APHTK238-1-400x500.jpg" alt="">
-                    <div class="item-new__desc">
-                        <div class="item-new__des-title">Ao ngan tay</div>
-                        <div class="item-new__des-price">500.000</div>
-                    </div>
-                    <div class="overlay__item-new">
-                        <div>
-                            <i class="fas fa-shopping-cart"></i>
-
-                        </div>
-                        <div>
-                            <i class="fas fa-info-circle"></i>
-
-                        </div>
-                    </div>
-                </div>
+                {{/each}}
+                
                 <div class="new__icon-right new__icon"><i class="fas fa-chevron-circle-right"></i></div>
             </div>
         </div>

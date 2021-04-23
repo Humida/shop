@@ -1,8 +1,9 @@
 <head>
     <link rel="stylesheet" href="css/partial/header.css">
 </head>
+<div class="overlay__mobie"></div>
 <div class="header">
-        <div class="icon__navbar-mobie"><i class="fas fa-bars"></i></div>
+        <div class="icon__navbar-mobie"><i class="fas fa-bars menu__icon"></i></div>
         <div class="header__logo">doo</div>
         <div class="header__navbar">
             <ul>
@@ -53,7 +54,6 @@
             </ul>
         </div>
         <div class="header__user-nav">
-
             <a href="">
                 <div class="user-nav__search"><i class="fas fa-search"></i></div>
             </a>
@@ -85,6 +85,31 @@
                     <li>Dịch vụ</li>
                     <li>Liên Hệ</li>
                 </ul>
+                
             </div>
         </div>
     </div>
+
+    <script>
+        var menuMobie=document.querySelector('.menu__icon');
+        var navbarMobie=document.querySelector('.navbar__mobie');
+        menuMobie.addEventListener('click',async function(){
+            if(menuMobie.className.includes('fa-bars')){
+                menuMobie.classList.remove('fa-bars');
+                menuMobie.classList.add('fa-times');
+                navbarMobie.style.display="flex";
+            }
+            else{
+                menuMobie.classList.add('fa-bars');
+                menuMobie.classList.remove('fa-times');
+                navbarMobie.style.display="none";
+            }
+            
+
+        })
+        window.addEventListener("resize",function(){
+                if(window.innerWidth>1023){
+                navbarMobie.style.display="none";
+                }
+        })
+    </script>

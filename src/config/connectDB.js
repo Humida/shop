@@ -5,5 +5,4 @@ function connect() {
         .then(() => { console.log('connected') })
         .catch(() => { throw new Error('not connect') })
 }
-
 module.exports = { connect };
