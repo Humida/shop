@@ -2,6 +2,9 @@ const express = require('express');
 const handlebars = require('express-handlebars');
 const path = require('path');
 
+// require route
+const productRouter = require('./src/router/product.router')
+
 const app = express();
 // use dotenv
 require('dotenv').config()
@@ -21,6 +24,14 @@ app.use(express.urlencoded({ extended: false }));
 // app use static file
 
 app.use(express.static(path.join(__dirname, 'src/public')));
+
+// connect mongodb
+const db = require('./src/config/connectDB');
+db.connect();
+
+// router use
+
+app.use('/shirt', productRouter);
 
 app.get('/', (req, res, next) => {
     res.render('home');
