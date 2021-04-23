@@ -104,112 +104,16 @@
         <div class="selling-product">
             <h2>SẢN PHẨM BÁN CHẠY</h2>
             <div class="selling-product__container">
+            {{#each bestSelling}}
                 <div class="selling-product__container-item">
-                    <img src="./assets/selling/APHTK218-1-400x500.jpg" alt="">
+                    <img src={{this.path}} alt="">
                     <div class="desc__selling-item">
-                        <div class="desc__selling-item-title">Ao phong</div>
-                        <div class="desc__selling-item-price">500.000</div>
+                        <div class="desc__selling-item-title">{{this.name}}</div>
+                        <div class="desc__selling-item-price">{{this.price}}</div>
                     </div>
                     <button><a href=""><i class="fas fa-shopping-cart"></i>  Thêm vào giỏ hàng</a></button>
                 </div>
-                <div class="selling-product__container-item">
-                    <img src="./assets/selling/APHTK220-12-400x500.jpg" alt="">
-                    <div class="desc__selling-item">
-                        <div class="desc__selling-item-title">Ao phong</div>
-                        <div class="desc__selling-item-price">500.000</div>
-                    </div>
-                    <button><a href=""><i class="fas fa-shopping-cart"></i>  Thêm vào giỏ hàng</a></button>
-                </div>
-                <div class="selling-product__container-item">
-                    <img src="./assets/selling/APHTK225-4-400x500.jpg" alt="">
-                    <div class="desc__selling-item">
-                        <div class="desc__selling-item-title">Ao phong</div>
-                        <div class="desc__selling-item-price">500.000</div>
-                    </div>
-                    <button><a href=""><i class="fas fa-shopping-cart"></i>  Thêm vào giỏ hàng</a></button>
-                </div>
-                <div class="selling-product__container-item">
-                    <img src="./assets/selling/APHTK218-1-400x500.jpg" alt="">
-                    <div class="desc__selling-item">
-                        <div class="desc__selling-item-title">Ao phong</div>
-                        <div class="desc__selling-item-price">500.000</div>
-                    </div>
-                    <button><a href=""><i class="fas fa-shopping-cart"></i>  Thêm vào giỏ hàng</a></button>
-                </div>
-                <div class="selling-product__container-item">
-                    <img src="./assets/selling/APHTK218-1-400x500.jpg" alt="">
-                    <div class="desc__selling-item">
-                        <div class="desc__selling-item-title">Ao phong</div>
-                        <div class="desc__selling-item-price">500.000</div>
-                    </div>
-                    <button><a href=""><i class="fas fa-shopping-cart"></i>  Thêm vào giỏ hàng</a></button>
-
-                </div>
-                <div class="selling-product__container-item">
-                    <img src="./assets/selling/STDTK211-5-400x500.jpg" alt="">
-                    <div class="desc__selling-item">
-                        <div class="desc__selling-item-title">Ao phong</div>
-                        <div class="desc__selling-item-price">500.000</div>
-                    </div>
-                    <button><a href=""><i class="fas fa-shopping-cart"></i>  Thêm vào giỏ hàng</a></button>
-
-                </div>
-                <div class="selling-product__container-item">
-                    <img src="./assets/selling/APHTK236-7-400x500.jpg" alt="">
-                    <div class="desc__selling-item">
-                        <div class="desc__selling-item-title">Ao phong</div>
-                        <div class="desc__selling-item-price">500.000</div>
-                    </div>
-                    <button><a href=""><i class="fas fa-shopping-cart"></i>  Thêm vào giỏ hàng</a></button>
-
-                </div>
-                <div class="selling-product__container-item">
-                    <img src="./assets/selling/APHTK218-1-400x500.jpg" alt="">
-                    <div class="desc__selling-item">
-                        <div class="desc__selling-item-title">Ao phong</div>
-                        <div class="desc__selling-item-price">500.000</div>
-                    </div>
-                    <button><a href=""><i class="fas fa-shopping-cart"></i>  Thêm vào giỏ hàng</a></button>
-
-                </div>
-                <div class="selling-product__container-item">
-                    <img src="./assets/selling/APHTK218-1-400x500.jpg" alt="">
-                    <div class="desc__selling-item">
-                        <div class="desc__selling-item-title">Ao phong</div>
-                        <div class="desc__selling-item-price">500.000</div>
-                    </div>
-                    <button><a href=""><i class="fas fa-shopping-cart"></i>  Thêm vào giỏ hàng</a></button>
-
-                </div>
-                <div class="selling-product__container-item">
-                    <img src="./assets/selling/POTTK217-7-1-400x500.jpg" alt="">
-                    <div class="desc__selling-item">
-                        <div class="desc__selling-item-title">Ao phong</div>
-                        <div class="desc__selling-item-price">500.000</div>
-                    </div>
-                    <button><a href=""><i class="fas fa-shopping-cart"></i>  Thêm vào giỏ hàng</a></button>
-
-                </div>
-                <div class="selling-product__container-item">
-                    <img src="./assets/selling/APHTK218-1-400x500.jpg" alt="">
-                    <div class="desc__selling-item">
-                        <div class="desc__selling-item-title">Ao phong</div>
-                        <div class="desc__selling-item-price">500.000</div>
-                    </div>
-                    <button><a href=""><i class="fas fa-shopping-cart"></i>  Thêm vào giỏ hàng</a></button>
-
-
-                </div>
-                <div class="selling-product__container-item">
-                    <img src="./assets/selling/QSKTK203-4-400x500.jpg" alt="">
-                    <div class="desc__selling-item">
-                        <div class="desc__selling-item-title">Ao phong</div>
-                        <div class="desc__selling-item-price">500.000</div>
-                    </div>
-                    <button><a href=""><i class="fas fa-shopping-cart"></i>  Thêm vào giỏ hàng</a></button>
-
-                </div>
-
+            {{/each}}
             </div>
         </div>
         <!-- end selling product -->

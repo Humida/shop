@@ -6,9 +6,11 @@ const shirtSchema = new Schema({
     name: { type: String, unique: true },
     sellings: { type: Number },
     price: { type: Number },
+    amount: { type: Number },
+    quantitySold: { type: Number },
     type: { type: String },
     path: { type: String },
-    createdAt: { type: Date, unique: true },
+    createdAt: { type: Date },
 });
 
 const shirt = mongoose.model('shirt', shirtSchema);

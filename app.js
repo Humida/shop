@@ -1,6 +1,7 @@
 const express = require('express');
 const handlebars = require('express-handlebars');
 const path = require('path');
+const homeControllor = require('./src/app/controller/home.controller');
 
 // require route
 const productRouter = require('./src/router/product.router')
@@ -33,9 +34,7 @@ db.connect();
 
 app.use('/shirt', productRouter);
 
-app.get('/', (req, res, next) => {
-    res.render('home');
-})
+app.get('/', homeControllor);
 
 const port = process.env.PORT || 4000;
 
