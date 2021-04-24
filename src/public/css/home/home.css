@@ -126,7 +126,7 @@ html {
 
 .new__icon {
     position: absolute;
-    font-size: 3rem;
+    font-size: 2rem;
     z-index: 999;
     opacity: 0.4;
 }
@@ -146,7 +146,7 @@ html {
 /* START SELLING-PRODUCT */
 
 .selling-product>h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
     padding: 60px 0px;
 }
@@ -230,13 +230,16 @@ html {
     }
     /*  */
     .new>h2 {
-        padding: 40px 0px 20px;
+        padding: 25px 0px 5px;
+        font-size: 2rem;
     }
     .selling-product>h2 {
-        padding: 40px 0px 40px;
+        padding: 15px 0px 15px;
+        font-size: 2rem;
     }
     .footer {
         flex-direction: column;
+        font-size: 1.4rem !important;
     }
     .footer>div {
         padding: 8px 56px !important;
@@ -272,5 +275,22 @@ html {
     .navbar__mobie-extra>ul>li {
         padding-top: 20px;
         font-size: 2rem;
+    }
+    .contact__title,
+    .list-item__title,
+    .policy__title {
+        font-size: 1.8rem !important;
+    }
+    .selling-product__container>.selling-product__container-item {
+        width: 147px !important;
+        padding: 20px 20px 40px 20px;
+        position: relative;
+    }
+    .desc__selling-item {
+        font-size: 1.4rem !important;
+    }
+    .selling-product__container-item>button {
+        top: 58% !important;
+        padding: 6px !important;
     }
 }
