@@ -1,7 +1,7 @@
 const express = require('express');
 const handlebars = require('express-handlebars');
 const path = require('path');
-const homeControllor = require('./src/app/controller/home.controller');
+const homeController = require('./src/app/controller/home.controller');
 
 // require route
 const productRouter = require('./src/router/product.router')
@@ -34,11 +34,15 @@ db.connect();
 
 app.use('/shirt', productRouter);
 
-app.get('/', homeControllor);
+app.get('/', homeController);
+
+app.get('/demo', function(req, res, next) {
+    res.render('cart');
+})
 
 const port = process.env.PORT || 4000;
 
 console.log(process.env.MONGODB);
 app.listen(port, () => {
-    console.log(`app is lintening on port :${port}`);
+    console.log(`app is listening on port :${port}`);
 })
