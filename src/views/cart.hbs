@@ -6,59 +6,26 @@
             <div>Xong</div>
         </div>
         <div class="cart__check-container">
-
             <div class="cart__check active">
+                {{#each listItem}}
                 <div class="cart__check-items">
                     <div class="check-item">
                         <div class="check-item__image">
-                            <img src="./assets/shirt/phong1.jpg" alt="">
+                            <img src={{this.path}} alt="">
                             <div class="check-item__desc">
-                                <div class="check-item__desc-name">Ao so mi 1</div>
-                                <div class="check-item__desc-type">Ao so mi</div>
+                                <div class="check-item__desc-name">{{this.name}}</div>
+                                <div class="check-item__desc-type">{{this.type}}</div>
                             </div>
                         </div>
                         <div class="check-item__quantity">
                             <i class="fas fa-plus"></i>
-                            <p>1</p>
+                            <p class="quantity">1</p>
                             <i class="fas fa-minus"></i>
                         </div>
-                        <div class="check__item-price">100</div>
+                        <div class="check__item-price">{{this.price}}</div>
                     </div>
                 </div>
-                <div class="cart__check-items">
-                    <div class="check-item">
-                        <div class="check-item__image">
-                            <img src="./assets/shirt/phong1.jpg" alt="">
-                            <div class="check-item__desc">
-                                <div class="check-item__desc-name">Áo sơ mi 1</div>
-                                <div class="check-item__desc-type">Ao so mi</div>
-                            </div>
-                        </div>
-                        <div class="check-item__quantity">
-                            <i class="fas fa-plus"></i>
-                            <p>1</p>
-                            <i class="fas fa-minus"></i>
-                        </div>
-                        <div class="check__item-price">100</div>
-                    </div>
-                </div>
-                <div class="cart__check-items">
-                    <div class="check-item">
-                        <div class="check-item__image">
-                            <img src="./assets/shirt/phong1.jpg" alt="">
-                            <div class="check-item__desc">
-                                <div class="check-item__desc-name">Ao so mi 1</div>
-                                <div class="check-item__desc-type">Ao so mi</div>
-                            </div>
-                        </div>
-                        <div class="check-item__quantity">
-                            <i class="fas fa-plus"></i>
-                            <p>1</p>
-                            <i class="fas fa-minus"></i>
-                        </div>
-                        <div class="check__item-price">100</div>
-                    </div>
-                </div>
+                {{/each}}
             </div>
             <div class="cart__check-out">
                 <div class="cart__title">Tính tiền</div>
@@ -69,7 +36,7 @@
                         <input type="text">
                     </div>
                     <div class="cart__pay">
-                        <p>Phải trả: 1000000000</p>
+                        <p class="cart__pay-value">Phải trả: 1000000000</p>
                         <button>Thanh toán</button>
                     </div>
                 </div>
@@ -171,5 +138,33 @@
         }
     </style>
     <script>
-        
+        function sumPrice(){
+            
+            var quantity=Array.from(document.querySelectorAll('.quantity'));
+            var price=Array.from(document.querySelectorAll('.check__item-price'));
+            
+            quantity=quantity.map((quantity)=>quantity.innerHTML);
+            price=price.map((price)=>price.innerHTML);
+
+            let sum=0
+            for(let i=0;i<price.length;i++){
+                sum=quantity[i]*price[i]+sum;
+            }
+            
+            return sum;
+
+        }
+
+        function dispayCartValue(){
+
+            let sum=sumPrice();
+
+            let sumElement=document.querySelector('.cart__price-sum');
+            let pay=document.querySelector('.cart__pay-value');
+            sumElement.innerHTML='Tổng là : ' + sum;
+            pay.innerHTML='Phải trả : '+ sum;
+            console.log(sum);
+        }
+
+        dispayCartValue();
     </script>

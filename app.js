@@ -4,7 +4,8 @@ const path = require('path');
 const homeController = require('./src/app/controller/home.controller');
 
 // require route
-const productRouter = require('./src/router/product.router')
+const productRouter = require('./src/router/product.router');
+const checkCartRouter = require('./src/router/cart.router');
 
 const app = express();
 // use dotenv
@@ -19,7 +20,7 @@ app.engine('.hbs', handlebars({ extname: '.hbs' }));
 // body parser
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 
 // app use static file
@@ -33,16 +34,17 @@ db.connect();
 // router use
 
 app.use('/shirt', productRouter);
-
+app.use('/cart', checkCartRouter);
 app.get('/', homeController);
 
 app.get('/demo', function(req, res, next) {
     res.render('cart');
-})
+});
+
 
 const port = process.env.PORT || 4000;
 
 console.log(process.env.MONGODB);
 app.listen(port, () => {
     console.log(`app is listening on port :${port}`);
-})
+});

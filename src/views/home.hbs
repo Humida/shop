@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +14,7 @@
 
 <body>
     <div class="main">
+        <form action="/cart" class="form__buy" method="POST"></form>
         <!-- start slider -->
         <div class="slider">
             <div class="slider__icon-left"><i class="fas fa-arrow-left"></i></div>
@@ -52,7 +52,6 @@
             </div>
         </div>
         <!-- end new -->
-
         <!-- start selling-product -->
         <div class="selling-product">
             <h2>SẢN PHẨM BÁN CHẠY</h2>
@@ -64,7 +63,7 @@
                         <div class="desc__selling-item-title">{{this.name}}</div>
                         <div class="desc__selling-item-price">{{this.price}}</div>
                     </div>
-                    <button><a href=""><i class="fas fa-shopping-cart"></i>  Thêm vào giỏ hàng</a></button>
+                    <button class="buy__button {{this._id}}"><i class="fas fa-shopping-cart"></i>  Thêm vào giỏ hàng</button>
                 </div>
             {{/each}}
             </div>
@@ -73,5 +72,31 @@
     </div>
 </body>
 <script src="./js/home.js"></script>
-
+<script>
+    let buyButton=document.querySelectorAll('.buy__button');
+    let itemBuy=[];
+    buyButton.forEach((item)=>{
+        item.addEventListener('click',()=>{
+            var id=item.className.split(' ')[1];
+            itemBuy.push(id);
+            console.log(itemBuy);
+        })
+    });
+    let buy=document.querySelector('.user-nav__cart');
+    let formBuy=document.querySelector('.form__buy');
+    buy.addEventListener('click',async()=>{
+        try{
+            await itemBuy.forEach((item)=>{
+                let inputE=document.createElement('input');
+                inputE.innerHTML=`<input type="text" name="${item}" value="${item}">`;
+                
+                formBuy.appendChild(inputE);
+            });
+            console.log(formBuy);
+            formBuy.submit();
+        }catch(e){
+            throw new Error(e);
+        }    
+    });
+</script>
 </html>
