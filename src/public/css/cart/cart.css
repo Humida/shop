@@ -26,12 +26,13 @@ html {
 
 .step__checkout>div {
     padding: 20px;
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     margin: 4px;
     background-color: #eee;
     /* color: #fff; */
     font-weight: 700;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 
@@ -45,7 +46,8 @@ html {
 }
 
 .cart__check-container {
-    display: flex;
+    /* display: flex; */
+    display: none;
 }
 
 .cart__check {
@@ -163,4 +165,63 @@ html {
     outline: none;
     color: #fff;
     background-color: rgb(1, 94, 117);
+}
+
+
+/* slider */
+
+.active {
+    display: flex !important;
+}
+
+.active>.step__checkout-check {
+    color: aqua !important;
+    background-color: green !important;
+}
+
+
+/* customor info */
+
+.customer__info {
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.customer__info>form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.customer__info>form>label {
+    padding: 20px 0px;
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.customer__info>form>input {
+    width: 50%;
+    padding: 10px 20px;
+    font-size: 1.6rem;
+}
+
+.customer__info>form>textarea {
+    padding: 20px 20px;
+    font-size: 1.6rem;
+    height: 100px;
+}
+
+.customer__info>form>button {
+    width: 200px;
+    padding: 14px 20px;
+    margin-top: 40px;
+    background-color: rgb(6, 75, 131);
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1.6rem;
 }

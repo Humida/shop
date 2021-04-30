@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const shirts = require('../../model/product/shirt.modles');
 module.exports = async function(req, res, next) {
     var data = req.body;
+    // lay id req tao thanh mot mang
     var ids = Object.keys(data);
-    // ids.map((id) => mongoose.Types.ObjectId(id));
     shirts.find({
             '_id': {
                 $in: ids
