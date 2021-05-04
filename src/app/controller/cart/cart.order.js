@@ -1,9 +1,9 @@
 const orderModel = require('../../model/order.model');
 
 module.exports = {
-    order: function(req, res, next) {
+    order: async function(req, res, next) {
         let data = req.body;
-
+        console.log(data);
         var item = new orderModel({
             nameUser: data[1],
             item: data[0],
@@ -11,7 +11,9 @@ module.exports = {
             addressOrder: data[3],
         })
 
-        item.save();
-        res.redirect(307, 'http://localhost:4000');
+        await item.save();
+
+        res.send('this is ok');
+
     }
 }

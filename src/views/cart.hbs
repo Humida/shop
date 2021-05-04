@@ -1,4 +1,4 @@
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <div class="cart__container">
         <div class="step__checkout">
             <div class="step__checkout-check">Kiểm tra</div>
@@ -43,18 +43,15 @@
             </div>
         </div>
         <div class="customer__info">
-            <form method="post" action="">
-                <label for="name-guest">Họ và tên</label>
-                <input type="text" name="name-guest">
-                <label for="">Số điện thoại</label>
-                <input type="text" name="phone-number">
-                <label for="">Địa chỉ nhận hàng</label>
-                <textarea name="" id="" cols="50" rows="10"></textarea>
+            <form method="post" action="" class="form-order">
+                <label for="nameUser">Họ và tên</label>
+                <input type="text" name="nameUser">
+                <label for="phoneNumber">Số điện thoại</label>
+                <input type="text" name="phoneNumber">
+                <label for="addressOrder">Địa chỉ nhận hàng</label>
+                <textarea name="addressOrder" cols="50" rows="10"></textarea>
                 <button type="submit">Xác nhận đặt hàng</button>
             </form>
-
-        </div>
-        <div class="cart__input-info">
 
         </div>
         <div class="done">
@@ -149,77 +146,4 @@
             }
         }
     </style>
-    <script>
-        {{!-- start check --}}
-        function sumPrice(){
-            
-            var quantity=Array.from(document.querySelectorAll('.quantity'));
-            var price=Array.from(document.querySelectorAll('.check__item-price'));
-            
-            quantity=quantity.map((quantity)=>quantity.innerHTML);
-            price=price.map((price)=>price.innerHTML);
-
-            let sum=0
-            for(let i=0;i<price.length;i++){
-                sum=quantity[i]*price[i]+sum;
-            }
-            return sum;
-
-        }
-
-        function dispayCartValue(){
-            let sum=sumPrice();
-
-            let sumElement=document.querySelector('.cart__price-sum');
-            let pay=document.querySelector('.cart__pay-value');
-            sumElement.innerHTML='Tổng là : ' + sum;
-            pay.innerHTML='Phải trả : '+ sum;
-        }
-
-        dispayCartValue();
-
-        let check=document.querySelector('.step__checkout-check');
-        let input=document.querySelector('.step__checkout-input');
-        let buttonCartPay=document.querySelector('.button-cart__pay');
-
-        {{!--  --}}
-        let cartCheckContainer=document.querySelector('.cart__check-container');
-        let customerInfo=document.querySelector('.customer__info');
-
-        [input,buttonCartPay].forEach((item)=>{
-
-            item.addEventListener('click', 
-                function nav(){
-                
-                    if(check.className.includes('active')){
-                        cartCheckContainer.classList.add('active');
-                        customerInfo.classList.remove('active');
-                    
-                    }
-                    else{   
-                        cartCheckContainer.classList.remove('active');
-                        customerInfo.classList.add('active');
-                    }
-                }
-            )
-        })
-
-        check.addEventListener('click',function nav(){
-            
-                if(check.className.includes('active')==false){
-                    cartCheckContainer.classList.add('active');
-                    customerInfo.classList.remove('active');
-                  
-                }
-                else{   
-                    cartCheckContainer.classList.remove('active');
-                    customerInfo.classList.add('active');
-                }
-            })
-
-
-
-
-            
-
-    </script>
+    <script src="./js/cart.js"></script>

@@ -1,5 +1,4 @@
 function sumPrice() {
-
     var quantity = Array.from(document.querySelectorAll('.quantity'));
     var price = Array.from(document.querySelectorAll('.check__item-price'));
 
@@ -67,7 +66,7 @@ var quantity = document.querySelectorAll('.quantity');
 let buttonForm = document.querySelector('.form-order>button');
 
 
-
+console.log(buttonForm);
 
 
 nameItem = Array.from(nameItem).map(item => item.innerHTML);
@@ -77,7 +76,7 @@ var result = {};
 nameItem.forEach(function(key, i) { result[key] = quantity[i] });
 
 console.log(result);
-
+console.log(document.querySelector('[name="addressOrder"]'))
 
 buttonForm.addEventListener('click', getValue);
 
@@ -100,11 +99,9 @@ function getValue() {
 
     cartCheckContainer.classList.remove('active');
     customerInfo.classList.remove('active');
-
+    console.log('a');
     axios.post('http://localhost:4000/cart/order', dataArray)
         .then(response => console.log(response))
         .catch(error => console.log(error))
 
 }
-
-const a = 10;
