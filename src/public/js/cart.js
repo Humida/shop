@@ -106,3 +106,5 @@ function getValue() {
         .catch(error => console.log(error))
 
 }
+
+const a = 10;
