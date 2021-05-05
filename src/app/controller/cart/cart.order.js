@@ -1,19 +1,18 @@
 const orderModel = require('../../model/order.model');
-
+const mongoose = require('mongoose');
 module.exports = {
-    order: async function(req, res, next) {
+    order: function(req, res, next) {
         let data = req.body;
         console.log(data);
         var item = new orderModel({
+            someId: mongoose.Types.ObjectId(),
             nameUser: data[1],
             item: data[0],
             phoneNumber: data[2],
             addressOrder: data[3],
         })
+        item.save();
 
-        await item.save();
-
-        res.send('this is ok');
-
+        console.log('fdihfidhfid');
     }
 }

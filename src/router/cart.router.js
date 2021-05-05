@@ -9,10 +9,9 @@ router.get('/', (req, res, next) => {
     res.render('cart');
 });
 
-router.post('/order', cartOrderControllor.order)
-
 router.post('/', require('../app/controller/cart/cart.check'));
 
+router.post('/order', cartOrderControllor.order);
 
 // router post routes
 

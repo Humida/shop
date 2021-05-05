@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const shirts = require('../../model/product/shirt.modles');
-module.exports = async function(req, res, next) {
+const shirts = require('../../model/product/a.models');
+
+module.exports = function(req, res, next) {
     var data = req.body;
     // lay id req tao thanh mot mang
     var ids = Object.keys(data);
@@ -14,6 +14,6 @@ module.exports = async function(req, res, next) {
             res.render('cart', { listItem });
         })
         .catch(err => {
-            throw Error(err);
+            console.log(err);
         })
 }

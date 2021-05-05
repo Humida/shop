@@ -75,7 +75,6 @@ quantity = Array.from(quantity).map(item => item.innerHTML);
 var result = {};
 nameItem.forEach(function(key, i) { result[key] = quantity[i] });
 
-console.log(result);
 console.log(document.querySelector('[name="addressOrder"]'))
 
 buttonForm.addEventListener('click', getValue);
@@ -85,6 +84,9 @@ function getValue() {
     let name = document.querySelector('[name="nameUser"]').value;
     let phone = document.querySelector('[name="phoneNumber"]').value;
     let address = document.querySelector('[name="addressOrder"]').value;
+    let form = document.querySelector('.form-order');
+    let done = document.querySelector('.done');
+    done.classList.add('active');
     let dataArray = [];
 
     dataArray.push(result);
@@ -99,9 +101,10 @@ function getValue() {
 
     cartCheckContainer.classList.remove('active');
     customerInfo.classList.remove('active');
-    console.log('a');
-    axios.post('http://localhost:4000/cart/order', dataArray)
+
+    console.log(dataArray);
+    axios.post('http://localhost:4000/cart/order/', dataArray)
         .then(response => console.log(response))
         .catch(error => console.log(error))
-
 }
+console.log(result);

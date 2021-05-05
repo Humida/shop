@@ -225,3 +225,23 @@ html {
     color: #fff;
     font-size: 1.6rem;
 }
+
+.done {
+    display: none;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    color: rgb(6, 153, 80);
+}
+
+.done>p {
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 20px;
+}
+
+.done>a {
+    text-decoration: none;
+    color: #000;
+}

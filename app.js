@@ -2,6 +2,14 @@ const express = require('express');
 const handlebars = require('express-handlebars');
 const path = require('path');
 const homeController = require('./src/app/controller/home.controller');
+const mongoose = require('mongoose');
+
+
+// app set mongoose
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
 
 // require route
 const productRouter = require('./src/router/product.router');
@@ -33,9 +41,9 @@ db.connect();
 
 // router use
 
+app.get('/', homeController);
 app.use('/shirt', productRouter);
 app.use('/cart', checkCartRouter);
-app.get('/', homeController);
 
 app.get('/demo', function(req, res, next) {
     res.render('cart');

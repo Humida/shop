@@ -1,8 +1,8 @@
-const shirts = require('../../model/product/shirt.modles')
+const shirts = require('../../model/product/a.models')
 module.exports = {
     shirt: (req, res, next) => {
         shirts.find({})
             .then((item) => { res.json(item) })
-            .catch(() => { throw Error('error') })
+            .catch((err) => { console.log(err) })
     },
 }

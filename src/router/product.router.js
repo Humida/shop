@@ -1,5 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const shirtController = require('../app/controller/product/shirt.controller');
 const router = express.Router();
 

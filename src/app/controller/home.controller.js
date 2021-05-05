@@ -1,6 +1,6 @@
-const shirts = require('../model/product/shirt.modles');
+const shirts = require('../model/product/a.models');
 
-module.exports = async function(req, res, next) {
+module.exports = function(req, res, next) {
     shirts.find({})
         .then((listShirt) => {
 
